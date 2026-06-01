@@ -1,1 +1,694 @@
 # Billu---Birthday-
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Billu 💜</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#080611;
+overflow:hidden;
+color:white;
+}
+
+/* STARS */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-2;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+opacity:.7;
+animation:twinkle 4s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+0%,100%{opacity:.2;}
+50%{opacity:1;}
+}
+
+.glow{
+position:fixed;
+width:350px;
+height:350px;
+border-radius:50%;
+background:#8b5cf6;
+filter:blur(120px);
+opacity:.25;
+top:-100px;
+left:-100px;
+z-index:-1;
+}
+
+/* SCREENS */
+
+.screen{
+position:absolute;
+width:100%;
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:25px;
+animation:fade .7s ease;
+}
+
+.screen.active{
+display:flex;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.card{
+width:min(90%,700px);
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+border-radius:28px;
+padding:45px 30px;
+box-shadow:0 0 40px rgba(139,92,246,.15);
+}
+
+.cat{
+font-size:65px;
+margin-bottom:15px;
+}
+
+h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+h2{
+font-size:2.1rem;
+margin-bottom:18px;
+}
+
+p{
+color:#ddd6ff;
+line-height:1.9;
+font-size:1rem;
+}
+
+button{
+margin-top:25px;
+border:none;
+padding:14px 26px;
+border-radius:50px;
+font-family:'Poppins',sans-serif;
+font-size:1rem;
+cursor:pointer;
+background:linear-gradient(135deg,#8b5cf6,#c4b5fd);
+color:white;
+transition:.3s;
+}
+
+button:hover{
+transform:translateY(-2px);
+}
+
+.choice-container{
+display:flex;
+gap:12px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:15px;
+}
+
+.popup{
+display:none;
+margin-top:20px;
+padding:18px;
+background:rgba(255,255,255,.05);
+border-radius:18px;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:2.2rem;
+}
+
+h2{
+font-size:1.8rem;
+}
+
+.cat{
+font-size:55px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+<div class="glow"></div>
+
+<!-- SCREEN 1 -->
+
+<section class="screen active" id="screen1">
+
+<div class="card">
+
+<div class="cat">🐱✉️</div>
+
+<h1>excuse me.</h1>
+
+<p>
+a white cat has requested your attention.
+<br>
+the matter is extremely important.
+<br>
+and slightly ridiculous.
+</p>
+
+<button onclick="nextScreen(2)">
+hear the news
+</button>
+
+</div>
+
+</section>
+
+<!-- SCREEN 2 -->
+
+<section class="screen" id="screen2">
+
+<div class="card">
+
+<div class="cat">🐱💻</div>
+
+<h2>birthday detection system</h2>
+
+<p>
+
+Scanning...
+
+<br><br>
+
+██████████
+
+<br><br>
+
+Subject: Billu
+
+<br>
+
+Status: Birthday Found
+
+</p>
+
+<p style="margin-top:15px">
+well.
+<br>
+this is happening again.
+</p>
+
+<button onclick="nextScreen(3)">
+continue
+</button>
+
+</div>
+
+</section>
+
+<!-- SCREEN 3 -->
+
+<section class="screen" id="screen3">
+
+<div class="card">
+
+<div class="cat">🐱📋</div>
+
+<h2>quick verification</h2>
+
+<p>
+before we continue,
+<br>
+please choose your current state.
+</p>
+
+<div class="choice-container">
+
+<button onclick="nextScreen(4)">
+sleepy 😴
+</button>
+
+<button onclick="nextScreen(4)">
+hungry 🍜
+</button>
+
+<button onclick="nextScreen(4)">
+confused 🤨
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SCREEN 4 -->
+
+<section class="screen" id="screen4">
+
+<div class="card">
+
+<div class="cat">🐱🔍</div>
+
+<h2>official findings</h2>
+
+<p>
+
+🐾 somehow online whenever I check
+
+<br><br>
+
+🐾 has mastered the art of teasing
+
+<br><br>
+
+🐾 appears out of nowhere and acts like that's normal
+
+<br><br>
+
+🐾 somehow manages to be both chaotic and comforting
+
+<br><br>
+
+🐾 surprisingly easy to talk to
+
+</p>
+
+<button onclick="nextScreen(5)">
+accurate enough
+</button>
+
+</div>
+
+</section>
+
+<!-- SCREEN 5 -->
+
+<section class="screen" id="screen5">
+
+<div class="card">
+
+<div class="cat">🐱🎁</div>
+
+<h2>choose your birthday reward 🎁</h2>
+
+<div class="choice-container">
+
+<button onclick="gift()">
+unlimited snacks
+</button>
+
+<button onclick="gift()">
+infinite money
+</button>
+
+<button onclick="gift()">
+perfect sleep schedule
+</button>
+
+</div>
+
+<div class="popup" id="giftPopup">
+
+unfortunately,
+
+<br><br>
+
+all rewards have been stolen by cats.
+
+</div>
+
+<button onclick="nextScreen(6)">
+continue anyway
+</button>
+
+</div>
+
+</section>
+<!-- SCREEN 6 -->
+
+<section class="screen" id="screen6">
+
+<div class="card">
+
+<div class="cat">🐱☁️</div>
+
+<h2>unexpected discovery</h2>
+
+<p>
+somehow we met online.
+
+<br><br>
+
+and somehow you became one of the people I talk to the most.
+
+<br><br>
+
+funny how that happened.
+</p>
+
+<button onclick="nextScreen(7)">
+continue investigation
+</button>
+
+</div>
+
+</section>
+
+<!-- SCREEN 7 -->
+
+<section class="screen" id="screen7">
+
+<div class="card">
+
+<div class="cat">🐱⚖️</div>
+
+<h2>cat council meeting</h2>
+
+<p>
+the council has reviewed your file.
+</p>
+
+<button onclick="showVerdict()">
+view verdict
+</button>
+
+<div class="popup" id="verdictPopup">
+
+VERDICT
+
+<br><br>
+
+Nice.
+
+<br>
+
+Funny.
+
+<br>
+
+Acceptable.
+
+<br><br>
+
+Birthday wishes approved.
+
+</div>
+
+<button onclick="nextScreen(8)">
+continue
+</button>
+
+</div>
+
+</section>
+
+<!-- SCREEN 8 -->
+
+<section class="screen" id="screen8">
+
+<div class="card">
+
+<div class="cat">🐱🕶️</div>
+
+<h2>confidential information</h2>
+
+<p>
+
+despite all the teasing,
+
+<br><br>
+
+you're genuinely a really nice person.
+
+<br><br>
+
+please do not let this information reach your ego.
+
+</p>
+
+<div class="choice-container">
+
+<button onclick="nextScreen(9)">
+understood
+</button>
+
+<button onclick="nextScreen(9)">
+deleting evidence
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SCREEN 9 -->
+
+<section class="screen" id="screen9">
+
+<div class="card">
+
+<div class="cat">🐱💻</div>
+
+<h2>preparing birthday protocol...</h2>
+
+<p>
+
+Searching for Billu...
+
+<br><br>
+
+██████████ 100%
+
+<br><br>
+
+Target Found
+
+<br><br>
+
+Friendship Status:
+Excellent
+
+<br><br>
+
+Generating message...
+
+</p>
+
+<button onclick="nextScreen(10)">
+open message
+</button>
+
+</div>
+
+</section>
+
+<!-- SCREEN 10 -->
+
+<section class="screen" id="screen10">
+
+<div class="card">
+
+<div class="cat">🐱🎂</div>
+
+<h1>HAPPY BIRTHDAY BILLU 💜</h1>
+
+<p>
+
+thanks for all the random conversations,
+
+<br><br>
+
+the laughs,
+
+<br><br>
+
+the teasing,
+
+<br><br>
+
+and for simply being around.
+
+<br><br>
+
+hope this year brings you
+
+<br>
+
+plenty of reasons to smile,
+
+<br>
+
+good memories,
+
+<br>
+
+good food,
+
+<br>
+
+and lots of cats.
+
+</p>
+
+<p style="margin-top:20px">
+
+approved by the white cat council 🐾
+
+</p>
+
+<button onclick="spawnCat()">
+emergency cat
+</button>
+
+<div id="catArea"></div>
+
+</div>
+
+</section>
+
+<script>
+
+/* STARS */
+
+const starsContainer =
+document.getElementById('stars');
+
+for(let i=0;i<220;i++){
+
+const star =
+document.createElement('div');
+
+star.classList.add('star');
+
+star.style.top =
+Math.random()*100 + '%';
+
+star.style.left =
+Math.random()*100 + '%';
+
+star.style.animationDuration =
+(Math.random()*3+2) + 's';
+
+starsContainer.appendChild(star);
+
+}
+
+/* SCREEN SWITCHING */
+
+function nextScreen(number){
+
+document
+.querySelectorAll('.screen')
+.forEach(screen=>{
+
+screen.classList.remove('active');
+
+});
+
+document
+.getElementById('screen'+number)
+.classList.add('active');
+
+}
+
+/* GIFT POPUP */
+
+function gift(){
+
+document
+.getElementById('giftPopup')
+.style.display='block';
+
+}
+
+/* VERDICT POPUP */
+
+function showVerdict(){
+
+document
+.getElementById('verdictPopup')
+.style.display='block';
+
+}
+
+/* EMERGENCY CAT */
+
+function spawnCat(){
+
+const cats=[
+'🐱',
+'🤍',
+'🐾',
+'✨'
+];
+
+const cat=
+document.createElement('div');
+
+cat.innerHTML=
+cats[Math.floor(Math.random()*cats.length)];
+
+cat.style.position='fixed';
+
+cat.style.left=
+Math.random()*90+'vw';
+
+cat.style.top=
+Math.random()*80+'vh';
+
+cat.style.fontSize='35px';
+
+document.body.appendChild(cat);
+
+}
+
+/* CLOSE HTML */
+
+</script>
+
+</body>
+</html>
